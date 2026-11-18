@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "html-to-epub-fontfix"
+version = "1.0.0"
+description = "Offline HTML to EPUB conversion with verified glyph decoding"
+requires-python = ">=3.10"
+dependencies = ["lxml>=5.3,<7", "tinycss2>=1.4,<2", "cssselect2>=0.8,<1", "fonttools[woff]>=4.55,<5", "Pillow>=11,<13"]
+
+[project.scripts]
+html-to-epub = "html_to_epub.cli:main"
+
+[tool.setuptools.package-data]
+html_to_epub = ["data/*.json.gz"]
+
+[tool.setuptools.packages.find]
+include = ["html_to_epub*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# Generated books and conversion reports
+*.epub
+*.report.json
+*.restored.html
+output/
